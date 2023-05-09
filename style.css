@@ -20,33 +20,30 @@
 
 .numbers {
     display: flex;
-    width: 300px;
+    width: 350px; /* adjust this */
     flex-wrap: wrap;
-    border: 1px solid gray;
 }
-
-
-.expressions {
-    display: flex;
-    width: 200px;
-    border: 1px solid gray;
-}
-
 
 .number {
     height: 50px;
     flex: 1 0 32%;
     text-align: center;
-    border: 1px solid gray;
+    background-color: lightblue;
+    margin: 1px;
 }
 
-.number :nth-child(0) {order: 10; };
-.numbers :nth-child(1) {order: 1; };
-.numbers :nth-child(2) {order: 2; };
-.numbers :nth-child(3) {order: 3; };
-.numbers :nth-child(4) {order: 4; };
-.numbers :nth-child(5) {order: 5; };
-.numbers :nth-child(6) {order: 6; };
-.numbers :nth-child(7) {order: 7; };
-.numbers :nth-child(8) {order: 8; };
-.numbers :nth-child(9) {order: 9; };
+.expressions {
+    display: flex;
+    flex-direction: column;
+    width: 150px; /* adjust this */
+}
+
+.operation {
+    flex: 1;
+    text-align: center;
+    background-color: lightblue;
+    margin: 1px;
+}
+
+
+
