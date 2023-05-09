@@ -11,39 +11,24 @@
     width: 500px;
     background-color: lightgray;
     border: 1px solid black;
+    border-radius: 8px;
 }
 
-.inputs {
+.user-inputs {
     display: flex;
     width: 500px;
-}
-
-.numbers {
-    display: flex;
-    width: 350px; /* adjust this */
+    height: 300px;
     flex-wrap: wrap;
 }
 
-.number {
-    height: 50px;
-    flex: 1 0 32%;
+.input {
+    flex: 1 0 20%;
     text-align: center;
-    background-color: lightblue;
-    margin: 1px;
+    background: lightblue;
+    margin: 2px;
+    border-radius: 8px;
 }
 
-.expressions {
-    display: flex;
-    flex-direction: column;
-    width: 150px; /* adjust this */
-}
-
-.operation {
-    flex: 1;
-    text-align: center;
-    background-color: lightblue;
-    margin: 1px;
-}
 
 
 
