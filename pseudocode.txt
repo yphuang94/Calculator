@@ -1,0 +1,20 @@
+Calculator
+
+When first input is specific operators
+    remove input
+
+When first input is valid and selected
+    store input
+
+When second input is valid and selected
+    store input
+
+If "=" is selected while second input is blank
+    do nothing
+
+When "=" is selected while first and second inputs are not blank
+    evaluate the expression based on selected operator
+    pass the result to display
+
+
+
