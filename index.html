@@ -15,7 +15,7 @@
             <button class="input" style="order: 17" value="0" onclick="store(this)">0</button>
             <button class="input" style="order: 18" value="." onclick="store(this)">.</button>
             <button class="input" style="order: 19" value="=" onclick="store(this)">=</button>
-            <button class="input" style="order: 20" value="+" onclick="store(this)">+</button>
+            <button class="input" style="order: 20" onclick="addition()">+</button>
             <button class="input" style="order: 13" value="1" onclick="store(this)">1</button>
             <button class="input" style="order: 14" value="2" onclick="store(this)">2</button>
             <button class="input" style="order: 15" value="3" onclick="store(this)">3</button>
@@ -38,16 +38,22 @@
     <script>
         let a = "";
         let b = "";
+        let additionToggle = false;
 
         function store(buttonObject) {
             let userSelection = buttonObject.value
-            console.log(userSelection);
+            a += userSelection;
+            console.log(a);
         }
         /*
         let inputs = document.querySelectorAll(".input") //add eventlistener "click" to every button
         inputs.forEach(input => {
             input.addEventListener("click", store())
         }) */
+
+        function addition() {
+            additionToggle = true;
+        }
 
 
 

@@ -1,20 +1,15 @@
 Calculator
 
-When first input is specific operators
-    remove input
+Order of Operation:
 
-When first input is valid and selected
-    store input
-
-When second input is valid and selected
-    store input
-
-If "=" is selected while second input is blank
-    do nothing
-
-When "=" is selected while first and second inputs are not blank
-    evaluate the expression based on selected operator
-    pass the result to display
+User selects input A
+    Everytime user selects a new input, append A (DONE)
+User selects operation
+    User can select multiple operations
+    However, the most recent operation overwrites the previous operation if next to each other
+User selects input B
+    Everytime user selects a new input, append B
+Evaluate A Operator B when equal sign is clicked
 
 
 
