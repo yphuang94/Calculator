@@ -12,31 +12,42 @@
     <div class="calculator-container">
         <div class="display"></div>
         <div class="user-inputs">
-            <button class="input" style="order: 17">0</button>
-            <button class="input" style="order: 18">.</button>
-            <button class="input" style="order: 19">=</button>
-            <button class="input" style="order: 20">+</button>
-            <button class="input" style="order: 13">1</button>
-            <button class="input" style="order: 14">2</button>
-            <button class="input" style="order: 15">3</button>
-            <button class="input" style="order: 16">-</button>
-            <button class="input" style="order: 9">4</button>
-            <button class="input" style="order: 10">5</button>
-            <button class="input" style="order: 11">6</button>
-            <button class="input" style="order: 12">*</button>
-            <button class="input" style="order: 5">7</button>
-            <button class="input" style="order: 6">8</button>
-            <button class="input" style="order: 7">9</button>
-            <button class="input" style="order: 8">/</button>
-            <button class="input" style="order: 1">(</button>
-            <button class="input" style="order: 2">)</button>
-            <button class="input" style="order: 3">%</button>
-            <button class="input" style="order: 4">AC</button>
+            <button class="input" style="order: 17" value="0" onclick="store(this)">0</button>
+            <button class="input" style="order: 18" value="." onclick="store(this)">.</button>
+            <button class="input" style="order: 19" value="=" onclick="store(this)">=</button>
+            <button class="input" style="order: 20" value="+" onclick="store(this)">+</button>
+            <button class="input" style="order: 13" value="1" onclick="store(this)">1</button>
+            <button class="input" style="order: 14" value="2" onclick="store(this)">2</button>
+            <button class="input" style="order: 15" value="3" onclick="store(this)">3</button>
+            <button class="input" style="order: 16" value="-" onclick="store(this)">-</button>
+            <button class="input" style="order: 9" value="4" onclick="store(this)">4</button>
+            <button class="input" style="order: 10" value="5" onclick="store(this)">5</button>
+            <button class="input" style="order: 11" value="6" onclick="store(this)">6</button>
+            <button class="input" style="order: 12" value="*" onclick="store(this)">*</button>
+            <button class="input" style="order: 5" value="7" onclick="store(this)">7</button>
+            <button class="input" style="order: 6" value="8" onclick="store(this)">8</button>
+            <button class="input" style="order: 7" value="9" onclick="store(this)">9</button>
+            <button class="input" style="order: 8" value="/" onclick="store(this)">/</button>
+            <button class="input" style="order: 1" value="(" onclick="store(this)">(</button>
+            <button class="input" style="order: 2" value=")" onclick="store(this)">)</button>
+            <button class="input" style="order: 3" value="%" onclick="store(this)">%</button>
+            <button class="input" style="order: 4" value="AC" onclick="store(this)">AC</button>
         </div>
     </div>
 
     <script>
-        
+        let a = "";
+        let b = "";
+
+        function store(buttonObject) {
+            let userSelection = buttonObject.value
+            console.log(userSelection);
+        }
+        /*
+        let inputs = document.querySelectorAll(".input") //add eventlistener "click" to every button
+        inputs.forEach(input => {
+            input.addEventListener("click", store())
+        }) */
 
 
 
