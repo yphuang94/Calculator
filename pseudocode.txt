@@ -11,9 +11,9 @@ Global variables:
 "Operate"
 
 When user inputs a number,
-    store number in Array
+    store number in Array //store()
 
-When user selects an operator,
+When user selects an operator, //addition()
     store the operator in "operate"
     if "results" is empty and "A" is empty,
         store joined number in "A"
@@ -33,18 +33,6 @@ When user inputs "equal"
     clear Array
     return "results"
 
-
-
-
-
-When user inputs new number,
-    store in "B" and:
-    If both "A" and "B" are not empty,
-        store "A" operator "B" based on "operate" in "A"
-        clear "B", and "operate"
-
-When user inputs "equal",
-    return value of "A"
 
 
 

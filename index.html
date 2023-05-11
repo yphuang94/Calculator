@@ -15,7 +15,7 @@
             <button class="input" style="order: 17" value="0" onclick="store(this)">0</button>
             <button class="input" style="order: 18" value="." onclick="store(this)">.</button>
             <button class="input" style="order: 19" onclick="equal()">=</button>
-            <button class="input" style="order: 20" onclick="addition()">+</button>
+            <button class="input" style="order: 20" value="+" onclick="addition(this)">+</button>
             <button class="input" style="order: 13" value="1" onclick="store(this)">1</button>
             <button class="input" style="order: 14" value="2" onclick="store(this)">2</button>
             <button class="input" style="order: 15" value="3" onclick="store(this)">3</button>
@@ -36,20 +36,41 @@
     </div>
 
     <script>
-        
-        let operator = "";
         let numbers = [];
+        let inputA = "";
+        let inputB = "";
+        let results = "";
+        let operator = "";
+        let placeholder = "";
 
         function store(buttonObject) {
-            let firstInput = "";
-            let secondInput = "";
-            let userSelection = buttonObject.value //grab user inputs
-
+            placeholder = ""; //we're clearing it but the aggregate is in the array
+            let userSelection = buttonObject.value;
             numbers.push(userSelection);
+            
             numbers.forEach(number => {
-                firstInput += number;
+                placeholder += number;
             })
-            console.log(firstInput);
+        }
+
+        function addition(operation) {
+            operator = operation.value;
+            if (results == "" && inputA == "") {
+                inputA = placeholder;
+            } else {
+                inputB = placeholder;
+            }
+            numbers = [];
+            
+            /* storing inputA and inputB correctly
+            console.log(inputA);
+            console.log(inputB);
+            */
+        }
+
+        
+
+        function equal() {
 
         }
 
