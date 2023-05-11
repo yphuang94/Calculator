@@ -1,15 +1,47 @@
 Calculator
 
-Order of Operation:
+In our case, an operator must always produce a result. Therefore "A" operator "B" must always produce a result
 
-User selects input A
-    Everytime user selects a new input, append A (DONE)
-User selects operation
-    User can select multiple operations
-    However, the most recent operation overwrites the previous operation if next to each other
-User selects input B
-    Everytime user selects a new input, append B
-Evaluate A Operator B when equal sign is clicked
+/* Process Mapping */
+
+When user inputs a number,
+    store number in Array
+
+When user selects an operator,
+    store joined number in "A"
+    store the operator in "operate"
+
+
+
+
+When user inputs a second number, 
+    store number in Array
+
+    store in "B" and:
+        If both "A" and "B" are not empty,
+            store "A" operator "B" based on "operate" in "A"
+            clear "B", and "operate"
+
+When user inputs new operator,
+    store operator in "operate"
+
+
+
+
+When user inputs new number,
+    store in "B" and:
+    If both "A" and "B" are not empty,
+        store "A" operator "B" based on "operate" in "A"
+        clear "B", and "operate"
+
+When user inputs "equal",
+    return value of "A"
+
+
+
+
+    
+
 
 
 
