@@ -61,17 +61,30 @@
                 inputB = placeholder;
             }
             numbers = [];
-            
+
             /* storing inputA and inputB correctly
             console.log(inputA);
             console.log(inputB);
             */
         }
 
-        
+        /* WORKS BUT DOESN'T HANDLE RESULTS + NEW INPUT - DON'T DELETE. I think it's because operator is selected before number is inputted*/
 
         function equal() {
-
+            if (results == "" && inputB == "") {
+                inputB = placeholder;
+                if (operator == "+") {
+                    results = parseFloat(inputA) + parseFloat(inputB);
+                }
+            } else {
+                if (operator == "+") {
+                    results = parseFloat(results) + parseFloat(inputB);
+                }
+            }
+            inputA = "";
+            inputB = "";
+            operator = "";
+            console.log(results);
         }
 
         
