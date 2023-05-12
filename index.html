@@ -55,6 +55,7 @@
 
         function addition(operation) {
             operator = operation.value;
+
             if (results == "" && inputA == "") {
                 inputA = placeholder;
             } else {
@@ -81,10 +82,13 @@
                     results = parseFloat(results) + parseFloat(inputB);
                 }
             }
+            
             inputA = "";
             inputB = "";
             operator = "";
+            placeholder = "";
             console.log(results);
+            
         }
 
         
