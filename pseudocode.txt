@@ -10,25 +10,22 @@ Global variables:
 "Results"
 "Operate"
 "Placeholder" //for storing numbers
-
+"Numbers" //for combining numbers
 
 
 When user inputs a number,
-    store number in Array //store()
-
+    store number in Array
+    if "A" is empty,
+        store Array value in "A"
+    else,
+        store Array value in "B"
+    
 
 
 When user selects an operator, //addition()
     store the operator in "operate"
-    if "results" is empty and "A" is empty,
-        store Array value in "A"
-    else,
-        store Array value in "B"
-
     clear Array
 
-/* The problem with the above is that if nothing is selected before the operator, nothing is stored. Example is (results + future input) */
-/* "B" is used again as the third value in the example scenario above */
 
 
 When user inputs "equal" //equal()
@@ -39,6 +36,7 @@ When user inputs "equal" //equal()
         store "results" operator "B" based on "operate" in "results"
 
     clear "A", "B", and "operate"
+    clear "placeholder"
     clear Array
     return "results"
 

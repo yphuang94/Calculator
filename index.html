@@ -37,12 +37,12 @@
 
     <script>
         let numbers = [];
+        let placeholder = "";
         let inputA = "";
         let inputB = "";
         let results = "";
         let operator = "";
-        let placeholder = "";
-
+        
         function store(buttonObject) {
             placeholder = ""; //we're clearing it but the aggregate is in the array
             let userSelection = buttonObject.value;
@@ -54,6 +54,7 @@
             //We need to store input B here somehow...
         }
 
+        
         function addition(operation) {
             operator = operation.value;
 
@@ -63,14 +64,9 @@
                 inputB = placeholder;
             }
             numbers = [];
-
-            /* storing inputA and inputB correctly
-            console.log(inputA);
-            console.log(inputB);
-            */
         }
 
-        /* WORKS BUT DOESN'T HANDLE RESULTS + NEW INPUT - DON'T DELETE. I think it's because operator is selected before number is inputted*/
+        /* WORKS BUT DOESN'T HANDLE RESULTS + NEW INPUT - DON'T DELETE. I think it's because operator is selected before number is inputted */
 
         function equal() {
             if (results == "" && inputB == "") {
@@ -89,9 +85,8 @@
             operator = "";
             placeholder = "";
             console.log(results);
-            
         }
-
+        
         
         
     
