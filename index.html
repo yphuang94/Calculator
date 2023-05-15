@@ -15,19 +15,19 @@
             <button class="input" style="order: 17" value="0" onclick="store(this)">0</button>
             <button class="input" style="order: 18" value="." onclick="store(this)">.</button>
             <button class="input" style="order: 19" onclick="equal()">=</button>
-            <button class="input" style="order: 20" value="+" onclick="addition(this)">+</button>
+            <button class="input" style="order: 20" value="+" onclick="operate(this)">+</button>
             <button class="input" style="order: 13" value="1" onclick="store(this)">1</button>
             <button class="input" style="order: 14" value="2" onclick="store(this)">2</button>
             <button class="input" style="order: 15" value="3" onclick="store(this)">3</button>
-            <button class="input" style="order: 16" onclick="subtract()">-</button>
+            <button class="input" style="order: 16" value="-" onclick="operate(this)">-</button>
             <button class="input" style="order: 9" value="4" onclick="store(this)">4</button>
             <button class="input" style="order: 10" value="5" onclick="store(this)">5</button>
             <button class="input" style="order: 11" value="6" onclick="store(this)">6</button>
-            <button class="input" style="order: 12" onclick="multiply()">*</button>
+            <button class="input" style="order: 12" value="*" onclick="operate(this)">*</button>
             <button class="input" style="order: 5" value="7" onclick="store(this)">7</button>
             <button class="input" style="order: 6" value="8" onclick="store(this)">8</button>
             <button class="input" style="order: 7" value="9" onclick="store(this)">9</button>
-            <button class="input" style="order: 8" onclick="divide()">/</button>
+            <button class="input" style="order: 8" value="/" onclick="operate(this)">/</button>
             <button class="input" style="order: 1" value="(" onclick="store(this)">(</button>
             <button class="input" style="order: 2" value=")" onclick="store(this)">)</button>
             <button class="input" style="order: 3" value="%" onclick="store(this)">%</button>
@@ -44,53 +44,68 @@
         let operator = "";
         
         function store(buttonObject) {
-            placeholder = ""; //we're clearing it but the aggregate is in the array
+            placeholder = "";
             let userSelection = buttonObject.value;
             numbers.push(userSelection);
             
             numbers.forEach(number => {
                 placeholder += number;
             })
-            //We need to store input B here somehow...
-        }
 
-        
-        function addition(operation) {
-            operator = operation.value;
-
-            if (results == "" && inputA == "") {
+            if (results == "" && operator == "") {
                 inputA = placeholder;
             } else {
                 inputB = placeholder;
             }
+        }
+
+        
+        function operate(operation) {
+            operator = operation.value;
             numbers = [];
         }
 
-        /* WORKS BUT DOESN'T HANDLE RESULTS + NEW INPUT - DON'T DELETE. I think it's because operator is selected before number is inputted */
 
         function equal() {
-            if (results == "" && inputB == "") {
-                inputB = placeholder;
-                if (operator == "+") {
-                    results = parseFloat(inputA) + parseFloat(inputB);
-                }
+            if (results == "") {
+                evaluateInputs()
+            } else if (results != "" && inputB != "") {
+                evaluateResults();
             } else {
-                if (operator == "+") {
-                    results = parseFloat(results) + parseFloat(inputB);
-                }
+                return results;
             }
 
             inputA = "";
             inputB = "";
             operator = "";
             placeholder = "";
+
             console.log(results);
         }
-        
-        
-        
-    
 
+        function evaluateInputs() {
+            if (operator == "+") {
+                results = parseFloat(inputA) + parseFloat(inputB);
+            } else if (operator == "-") {
+                results = parseFloat(inputA) - parseFloat(inputB);
+            } else if (operator == "*") {
+                results = parseFloat(inputA) * parseFloat(inputB);
+            } else if (operator == "/") {
+                results = parseFloat(inputA) / parseFloat(inputB);
+            }
+        }
+
+        function evaluateResults() {
+            if (operator == "+") {
+                results = parseFloat(results) + parseFloat(inputB);
+            } else if (operator == "-") {
+                results = parseFloat(results) - parseFloat(inputB);
+            } else if (operator == "*") {
+                results = parseFloat(results) * parseFloat(inputB);
+            } else if (operator == "/") {
+                results = parseFloat(results) / parseFloat(inputB);
+            }
+        }
 
     </script>
 

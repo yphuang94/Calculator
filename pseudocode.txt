@@ -13,29 +13,31 @@ Global variables:
 "Numbers" //for combining numbers
 
 
+
 When user inputs a number,
     store number in Array
-    if "A" is empty,
+    if "Results" and "A" is empty,
         store Array value in "A"
     else,
         store Array value in "B"
-    
 
 
-When user selects an operator, //addition()
+
+When user selects an operator,
     store the operator in "operate"
     clear Array
 
 
 
-When user inputs "equal" //equal()
-    if "results" is empty and "B" is empty,
-        store Array value in "B"
-        store "A" operator "B" based on "operate" in "results"
-    else,
-        store "results" operator "B" based on "operate" in "results"
+When user inputs equal,
+    if "Results" is empty,
+        store "A" operator "B" based on "operate" in "Results"
+    else if "B" is not empty,
+        store "Results" operator "B" based on "operate" in "Results"
+    else, 
+        return "Results"
 
-    clear "A", "B", and "operate"
+    clear "B" and "operate"
     clear "placeholder"
     clear Array
     return "results"
