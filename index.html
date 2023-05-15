@@ -31,7 +31,7 @@
             <button class="input" style="order: 1" value="(" onclick="store(this)">(</button>
             <button class="input" style="order: 2" value=")" onclick="store(this)">)</button>
             <button class="input" style="order: 3" value="%" onclick="store(this)">%</button>
-            <button class="input" style="order: 4" value="AC" onclick="store(this)">AC</button>
+            <button class="input" style="order: 4" onclick="clear()">AC</button>
         </div>
     </div>
 
@@ -75,10 +75,7 @@
                 return results;
             }
 
-            inputA = "";
-            inputB = "";
-            operator = "";
-            placeholder = "";
+            clearInputs();
 
             console.log(results);
         }
@@ -105,6 +102,18 @@
             } else if (operator == "/") {
                 results = parseFloat(results) / parseFloat(inputB);
             }
+        }
+
+        function clearInputs() {
+            inputA = "";
+            inputB = "";
+            operator = "";
+            placeholder = "";
+        }
+
+        function clear() {
+            results = "";
+            //display innter HTML = "" as well
         }
 
     </script>
