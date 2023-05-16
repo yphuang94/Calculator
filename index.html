@@ -70,6 +70,10 @@
                 evaluateInputs();
                 displayText = results;
                 clearInputs();
+            } else if (results != "" && operator != "") {
+                evaluateResults();
+                displayText = results;
+                clearInputs();
             }
 
             operator = operation.value;
@@ -143,7 +147,7 @@
             changeDisplay();
         }
         
-        //code doesn't work if "results" is chaining multiple operators though
+        
     </script>
 
 </body>
