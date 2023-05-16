@@ -56,7 +56,6 @@
             }
 
             changeDisplay();
-            console.log(inputB);
         }
 
         function operate(operation) {
@@ -66,18 +65,16 @@
         }
 
         function equal() {
-            if (results == "") {
-                evaluateInputs()
+            if (results == "" && inputB != "") {
+                evaluateInputs();
+                displayText = results;
+                clearInputs();              
             } else if (results != "" && inputB != "") {
                 evaluateResults();
-            } else {
-                return results; //doesn't work when you press enter on just inputA
+                displayText = results;
+                clearInputs();
             }
 
-            clearInputs();
-
-            displayText = results;
-            
             changeDisplay();
         }
 
