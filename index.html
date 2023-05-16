@@ -30,9 +30,9 @@
             <button class="input" style="order: 6" value="8" onclick="store(this)">8</button>
             <button class="input" style="order: 7" value="9" onclick="store(this)">9</button>
             <button class="input" style="order: 8" value="/" onclick="operate(this)">/</button>
-            <button class="input" style="order: 1" onclick="backspace()">DEL</button>
+            <button class="input" style="order: 1" onclick="placeholder()">PLACEHOLDER</button>
             <button class="input" style="order: 2" onclick="placeholder()">PLACEHOLDER</button>
-            <button class="input" style="order: 3" value="%" onclick="store(this)">%</button>
+            <button class="input" style="order: 3" onclick="backspace()">DEL</button>
             <button class="input" style="order: 4" onclick="clearAll()">AC</button>
         </div>
     </div>
@@ -53,12 +53,25 @@
             } else {
                 inputB += userSelection;
                 displayText += userSelection;
+                console.log(inputB);
             }
 
             changeDisplay();
         }
 
+        function clearInputs() {
+            inputA = "";
+            inputB = "";
+            operator = "";
+        }
+
         function operate(operation) {
+            if (results == "" && operator != "") {
+                evaluateInputs();
+                displayText = results;
+                clearInputs();
+            }
+
             operator = operation.value;
             displayText += operator;
             changeDisplay();
@@ -102,12 +115,6 @@
             }
         }
 
-        function clearInputs() {
-            inputA = "";
-            inputB = "";
-            operator = "";
-        }
-
         function changeDisplay() {
             document.getElementById("display").innerHTML = displayText;
         }
@@ -138,6 +145,10 @@
         
 
         //your current code requires you to press equal to evaluate the expression. The user cannot chain the operations.
+        /* 
+        your code is adding the last two inputs together as strings ex. 1 + 1 is 11 instead of 2
+        we need to add inputB inputs as numbers instead
+        */
     </script>
 
 </body>
