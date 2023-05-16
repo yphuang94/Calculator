@@ -30,8 +30,8 @@
             <button class="input" style="order: 6" value="8" onclick="store(this)">8</button>
             <button class="input" style="order: 7" value="9" onclick="store(this)">9</button>
             <button class="input" style="order: 8" value="/" onclick="operate(this)">/</button>
-            <button class="input" style="order: 1" value="(" onclick="store(this)">(</button>
-            <button class="input" style="order: 2" value=")" onclick="store(this)">)</button>
+            <button class="input" style="order: 1" onclick="backspace()">DEL</button>
+            <button class="input" style="order: 2" onclick="store(this)">PLACEHOLDER</button>
             <button class="input" style="order: 3" value="%" onclick="store(this)">%</button>
             <button class="input" style="order: 4" onclick="clear()">AC</button>
         </div>
@@ -112,7 +112,19 @@
         function changeDisplay() {
             document.getElementById("display").innerHTML = displayText;
         }
-        
+
+        function backspace() {
+            if (results == "" && operator == "") {
+                inputA = inputA.substr(0, inputA.length - 1);
+                displayText = displayText.substr(0, displayText.length - 1);
+            } else {
+                inputB = inputB.substr(0, inputB.length - 1);
+                displayText = displayText.substr(0, displayText.length - 1);
+            } //doesn't remove operator
+
+            changeDisplay();
+        }
+
 
     </script>
 
