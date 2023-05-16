@@ -6,13 +6,20 @@
     margin-top: 250px;
 }
 
-#display {
+#display-container {
     height: 100px;
     width: 500px;
     background-color: lightgray;
     border: 1px solid black;
     border-radius: 8px;
     margin-bottom: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#display {
+    font-size: 36px;
 }
 
 .user-inputs {

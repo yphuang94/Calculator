@@ -10,7 +10,9 @@
 
 <body>
     <div class="calculator-container">
-        <div id="display"></div>
+        <div id="display-container">
+            <div id="display"></div>
+        </div>
         <div class="user-inputs">
             <button class="input" style="order: 17" value="0" onclick="store(this)">0</button>
             <button class="input" style="order: 18" value="." onclick="store(this)">.</button>
@@ -47,13 +49,19 @@
             
             if (results == "" && operator == "") {
                 inputA += userSelection;
+                displayText = inputA;
             } else {
                 inputB += userSelection;
+                displayText += userSelection;
             }
+
+            changeDisplay();
         }
 
         function operate(operation) {
             operator = operation.value;
+            displayText += operator;
+            changeDisplay();
         }
 
         function equal() {
@@ -62,11 +70,13 @@
             } else if (results != "" && inputB != "") {
                 evaluateResults();
             } else {
-                return results; //change to display later
+                return results;
             }
             clearInputs();
+
+            displayText = results;
             
-            console.log(results);
+            changeDisplay();
         }
 
         function evaluateInputs() {
@@ -99,10 +109,10 @@
             operator = "";
         }
 
-        function clear() {
-            results = "";
-            //display innter HTML = "" as well
+        function changeDisplay() {
+            document.getElementById("display").innerHTML = displayText;
         }
+        
 
     </script>
 
