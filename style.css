@@ -1,9 +1,12 @@
 .calculator-container {
     display: flex;
-    flex-direction: column;
-    align-items: center;
     justify-content: center;
     margin-top: 250px;
+}
+
+#calculator-body {
+    padding: 5px;
+    border: 1px solid black;
 }
 
 #top-container {
@@ -12,7 +15,7 @@
 
 #display-container {
     height: 100px;
-    width: 450px;
+    width: 400px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -27,10 +30,11 @@
 }
 
 #delete-container {
-    margin-left: auto;
     display: flex;
     flex-direction: column;
 }
+
+
 
 .user-inputs {
     display: flex;
@@ -48,6 +52,10 @@
     font-weight: 700;
 }
 
-
+.delete {
+    background-color: lightcoral;
+    width: 90px;
+    margin-left: 5px;
+}
 
 
