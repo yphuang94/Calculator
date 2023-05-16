@@ -36,35 +36,25 @@
     </div>
 
     <script>
-        let numbers = [];
-        let placeholder = "";
         let inputA = "";
         let inputB = "";
         let results = "";
         let operator = "";
-        
-        function store(buttonObject) {
-            placeholder = "";
-            let userSelection = buttonObject.value;
-            numbers.push(userSelection);
-            
-            numbers.forEach(number => {
-                placeholder += number;
-            })
+        let displayText = "";
 
+        function store(buttonObject) {
+            let userSelection = buttonObject.value;
+            
             if (results == "" && operator == "") {
-                inputA = placeholder;
+                inputA += userSelection;
             } else {
-                inputB = placeholder;
+                inputB += userSelection;
             }
         }
 
-        
         function operate(operation) {
             operator = operation.value;
-            numbers = [];
         }
-
 
         function equal() {
             if (results == "") {
@@ -72,11 +62,10 @@
             } else if (results != "" && inputB != "") {
                 evaluateResults();
             } else {
-                return results;
+                return results; //change to display later
             }
-
             clearInputs();
-
+            
             console.log(results);
         }
 
@@ -108,7 +97,6 @@
             inputA = "";
             inputB = "";
             operator = "";
-            placeholder = "";
         }
 
         function clear() {
