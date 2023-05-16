@@ -31,9 +31,9 @@
             <button class="input" style="order: 7" value="9" onclick="store(this)">9</button>
             <button class="input" style="order: 8" value="/" onclick="operate(this)">/</button>
             <button class="input" style="order: 1" onclick="backspace()">DEL</button>
-            <button class="input" style="order: 2" onclick="store(this)">PLACEHOLDER</button>
+            <button class="input" style="order: 2" onclick="placeholder()">PLACEHOLDER</button>
             <button class="input" style="order: 3" value="%" onclick="store(this)">%</button>
-            <button class="input" style="order: 4" onclick="clear()">AC</button>
+            <button class="input" style="order: 4" onclick="clearAll()">AC</button>
         </div>
     </div>
 
@@ -126,6 +126,16 @@
             
             changeDisplay();
         }
+
+        function clearAll() {
+            inputA = "";
+            inputB = "";
+            results = "";
+            operator = "";
+            displayText = "";
+            changeDisplay();
+        }
+        
 
         //your current code requires you to press equal to evaluate the expression. The user cannot chain the operations.
     </script>
