@@ -56,6 +56,7 @@
             }
 
             changeDisplay();
+            console.log(inputB);
         }
 
         function operate(operation) {
@@ -70,8 +71,9 @@
             } else if (results != "" && inputB != "") {
                 evaluateResults();
             } else {
-                return results;
+                return results; //doesn't work when you press enter on just inputA
             }
+
             clearInputs();
 
             displayText = results;
@@ -117,15 +119,18 @@
             if (results == "" && operator == "") {
                 inputA = inputA.substr(0, inputA.length - 1);
                 displayText = displayText.substr(0, displayText.length - 1);
-            } else {
+            } else if (inputB != "") {
                 inputB = inputB.substr(0, inputB.length - 1);
-                displayText = displayText.substr(0, displayText.length - 1);
-            } //doesn't remove operator
-
+                displayText = displayText.substr(0, displayText.length - 1); 
+            } else {
+                operator = operator.substr(0, operator.length - 1);;
+                displayText = displayText.substr(0, displayText.length - 1); //order of deletion is: inputB -> operator -> inputA
+            }
+            
             changeDisplay();
         }
 
-
+        //your current code requires you to press equal to evaluate the expression. The user cannot chain the operations.
     </script>
 
 </body>
