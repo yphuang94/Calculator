@@ -10,8 +10,14 @@
 
 <body>
     <div class="calculator-container">
-        <div id="display-container">
-            <div id="display"></div>
+        <div id="top-container">
+            <div id="display-container">
+                <div id="display"></div>
+            </div>
+            <div id="delete-container">
+                <button class="input" style="order: 3" onclick="backspace()">DEL</button>
+                <button class="input" style="order: 4" onclick="clearAll()">AC</button>
+            </div>
         </div>
         <div class="user-inputs">
             <button class="input" style="order: 17" value="0" onclick="store(this)">0</button>
@@ -30,10 +36,7 @@
             <button class="input" style="order: 6" value="8" onclick="store(this)">8</button>
             <button class="input" style="order: 7" value="9" onclick="store(this)">9</button>
             <button class="input" style="order: 8" value="/" onclick="operate(this)">/</button>
-            <button class="input" style="order: 1" onclick="placeholder()">PLACEHOLDER</button>
-            <button class="input" style="order: 2" onclick="placeholder()">PLACEHOLDER</button>
-            <button class="input" style="order: 3" onclick="backspace()">DEL</button>
-            <button class="input" style="order: 4" onclick="clearAll()">AC</button>
+            
         </div>
     </div>
 
@@ -53,7 +56,6 @@
             } else {
                 inputB += userSelection;
                 displayText += userSelection;
-                console.log(inputB);
             }
 
             changeDisplay();
@@ -66,13 +68,13 @@
         }
 
         function operate(operation) {
-            if (results == "" && operator != "") {
+            if (results == "" && operator != "") { //checks for current operator, evaluates A and B if user chains operators
                 evaluateInputs();
                 displayText = results;
                 clearInputs();
-            } else if (results != "" && operator != "") {
+            } else if (results != "" && operator != "") { //checks for result and current operator, evaluates Results and B if user chains operators
                 evaluateResults();
-                displayText = results;
+                displayText = results; //display latest result everytime user selects a second operator
                 clearInputs();
             }
 
@@ -82,12 +84,12 @@
         }
 
         function equal() {
-            if (results == "" && inputB != "") {
+            if (results == "" && inputB != "") { //checks for empty result, evaluates A and B
                 evaluateInputs();
                 displayText = results;
                 clearInputs();              
-            } else if (results != "" && inputB != "") {
-                evaluateResults();
+            } else if (results != "" && inputB != "") { //if there is a result, evaluates Results and B
+                evaluateResults(); 
                 displayText = results;
                 clearInputs();
             }
@@ -123,22 +125,22 @@
             document.getElementById("display").innerHTML = displayText;
         }
 
-        function backspace() {
-            if (results == "" && operator == "") {
+        function backspace() { //order of deletion is: inputB -> operator -> inputA
+            if (results == "" && operator == "") { //checks for B and deletes A
                 inputA = inputA.substr(0, inputA.length - 1);
-                displayText = displayText.substr(0, displayText.length - 1);
-            } else if (inputB != "") {
+                displayText = displayText.substr(0, displayText.length - 1); 
+            } else if (inputB != "") { //checks for B and deletes B
                 inputB = inputB.substr(0, inputB.length - 1);
                 displayText = displayText.substr(0, displayText.length - 1); 
-            } else {
+            } else { //deletes operator
                 operator = operator.substr(0, operator.length - 1);;
-                displayText = displayText.substr(0, displayText.length - 1); //order of deletion is: inputB -> operator -> inputA
+                displayText = displayText.substr(0, displayText.length - 1); 
             }
             
             changeDisplay();
         }
 
-        function clearAll() {
+        function clearAll() { //clear() is native JS function
             inputA = "";
             inputB = "";
             results = "";
@@ -146,7 +148,6 @@
             displayText = "";
             changeDisplay();
         }
-        
         
     </script>
 
