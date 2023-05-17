@@ -6,7 +6,8 @@
 
 #calculator-body {
     padding: 5px;
-    border: 1px solid black;
+    border-radius: 5px;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
 }
 
 #top-container {
@@ -19,22 +20,21 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: lightgray;
+    background-color: rgb(69, 68, 68);
     border: 1px solid black;
     border-radius: 8px;
     margin-bottom: 5px;
 }
 
 #display {
-    font-size: 36px;
+    font-size: 56px;
+    color: white;
 }
 
 #delete-container {
     display: flex;
     flex-direction: column;
 }
-
-
 
 .user-inputs {
     display: flex;
@@ -46,14 +46,19 @@
 .input {
     flex: 1 0 20%;
     text-align: center;
-    background: lightblue;
     margin: 2px;
     border-radius: 8px;
     font-weight: 700;
+    background-color: transparent;
+    font-size: 24px;
+}
+
+.input:hover {
+    background-color: lightgoldenrodyellow;
 }
 
 .delete {
-    background-color: lightcoral;
+    background-color: rgb(245, 152, 152);
     width: 90px;
     margin-left: 5px;
 }
