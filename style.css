@@ -6,7 +6,7 @@
 }
 
 #calculator-body {
-    height: 405px;
+    height: 410px;
     padding: 5px;
     margin-top: 235px;
     border-radius: 5px;
@@ -25,7 +25,7 @@
     justify-content: center;
     align-items: center;
     background-color: rgb(69, 68, 68);
-    border: 1px solid black;
+    border: 2px solid black;
     border-radius: 8px;
     margin-bottom: 5px;
 }
@@ -33,6 +33,7 @@
 #display {
     font-size: 56px;
     color: white;
+    
 }
 
 #delete-container {
@@ -57,14 +58,18 @@
     font-size: 24px;
 }
 
-.input:hover {
-    color: rgb(112, 152, 112);
+.equal {
+    background-color: rgb(190, 249, 190);
+}
+
+.operate {
+    background-color: rgb(197, 180, 250);
 }
 
 .delete {
-    background-color: rgb(232, 116, 116);
     width: 90px;
     margin-left: 5px;
+    margin-bottom: 5px;
 }
 
 
