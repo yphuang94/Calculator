@@ -16,27 +16,27 @@
                     <div id="display"></div>
                 </div>
                 <div id="delete-container">
-                    <button class="input delete" style="order: 3" onclick="backspace()">DEL</button>
-                    <button class="input delete" style="order: 4" onclick="clearAll()">AC</button>
+                    <button class="input delete" onclick="backspace()">DEL</button>
+                    <button class="input delete" onclick="clearAll()">AC</button>
                 </div>
             </div>
             <div class="user-inputs">
-                <button class="input" style="order: 17" value="0" onclick="store(this)">0</button>
-                <button class="input" style="order: 18" value="." onclick="store(this)">.</button>
-                <button class="input" style="order: 19" onclick="equal()">=</button>
-                <button class="input" style="order: 20" value="+" onclick="operate(this)">+</button>
-                <button class="input" style="order: 13" value="1" onclick="store(this)">1</button>
-                <button class="input" style="order: 14" value="2" onclick="store(this)">2</button>
-                <button class="input" style="order: 15" value="3" onclick="store(this)">3</button>
-                <button class="input" style="order: 16" value="-" onclick="operate(this)">-</button>
-                <button class="input" style="order: 9" value="4" onclick="store(this)">4</button>
-                <button class="input" style="order: 10" value="5" onclick="store(this)">5</button>
-                <button class="input" style="order: 11" value="6" onclick="store(this)">6</button>
-                <button class="input" style="order: 12" value="*" onclick="operate(this)">*</button>
-                <button class="input" style="order: 5" value="7" onclick="store(this)">7</button>
-                <button class="input" style="order: 6" value="8" onclick="store(this)">8</button>
-                <button class="input" style="order: 7" value="9" onclick="store(this)">9</button>
-                <button class="input" style="order: 8" value="/" onclick="operate(this)">/</button>
+                <button class="input" style="order: 13" value="0" onclick="store(this)">0</button>
+                <button class="input" style="order: 14" value="." onclick="store(this)">.</button>
+                <button class="input" style="order: 15" onclick="equal()">=</button>
+                <button class="input" style="order: 16" value="+" onclick="operate(this)">+</button>
+                <button class="input" style="order: 9" value="1" onclick="store(this)">1</button>
+                <button class="input" style="order: 10" value="2" onclick="store(this)">2</button>
+                <button class="input" style="order: 11" value="3" onclick="store(this)">3</button>
+                <button class="input" style="order: 12" value="-" onclick="operate(this)">-</button>
+                <button class="input" style="order: 5" value="4" onclick="store(this)">4</button>
+                <button class="input" style="order: 6" value="5" onclick="store(this)">5</button>
+                <button class="input" style="order: 7" value="6" onclick="store(this)">6</button>
+                <button class="input" style="order: 8" value="*" onclick="operate(this)">*</button>
+                <button class="input" style="order: 1" value="7" onclick="store(this)">7</button>
+                <button class="input" style="order: 2" value="8" onclick="store(this)">8</button>
+                <button class="input" style="order: 3" value="9" onclick="store(this)">9</button>
+                <button class="input" style="order: 4" value="/" onclick="operate(this)">/</button>
             </div> 
         </div>
     </div>
@@ -60,12 +60,6 @@
             }
 
             changeDisplay();
-        }
-
-        function clearInputs() {
-            inputA = "";
-            inputB = "";
-            operator = "";
         }
 
         function operate(operation) {
@@ -141,13 +135,21 @@
             changeDisplay();
         }
 
-        function clearAll() { //clear() is native JS function
+        function clearInputs() {
             inputA = "";
             inputB = "";
-            results = "";
             operator = "";
+        }
+
+        function clearAll() { //clear() is native JS function
+            clearInputs()
+            results = "";
             displayText = "";
             changeDisplay();
+        }
+
+        function checkInputs() {
+            
         }
         
     </script>
