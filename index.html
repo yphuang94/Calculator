@@ -13,6 +13,7 @@
         <div id="calculator-body">
             <div id="top-container">
                 <div id="display-container">
+                    <div id="running-display"></div>
                     <div id="display"></div>
                 </div>
                 <div id="delete-container">
@@ -47,6 +48,7 @@
         let results = "";
         let operator = "";
         let displayText = "";
+        let runningDisplay = "";
 
         function store(buttonObject) {
             let userSelection = buttonObject.value;
@@ -54,12 +56,15 @@
             if (results == "" && operator == "") {
                 inputA += userSelection;
                 displayText = inputA;
+                runningDisplay += userSelection;
             } else {
                 inputB += userSelection;
                 displayText += userSelection;
+                runningDisplay += userSelection;
             }
 
             changeDisplay();
+            changeRunningDisplay();
         }
 
         function operate(operation) {
@@ -75,7 +80,9 @@
 
             operator = operation.value;
             displayText += operator;
+            runningDisplay += " " + operator + " ";
             changeDisplay();
+            changeRunningDisplay();
         }
 
         function equal() {
@@ -120,6 +127,10 @@
             document.getElementById("display").innerHTML = displayText;
         }
 
+        function changeRunningDisplay() {
+            document.getElementById("running-display").innerHTML = runningDisplay;
+        }
+
         function backspace() { //order of deletion is: inputB -> operator -> inputA
             if (results == "" && operator == "") { //checks for B and deletes A
                 inputA = inputA.substr(0, inputA.length - 1);
@@ -132,6 +143,9 @@
                 displayText = displayText.substr(0, displayText.length - 1); 
             }
             
+            runningDisplay = runningDisplay.substr(0, runningDisplay.length - 1);
+
+            changeRunningDisplay();
             changeDisplay();
         }
 
@@ -145,7 +159,10 @@
             clearInputs()
             results = "";
             displayText = "";
+            runningDisplay = "";
+            
             changeDisplay();
+            changeRunningDisplay();
         }
         
     </script>

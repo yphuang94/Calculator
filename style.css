@@ -22,8 +22,8 @@
     height: 100px;
     width: 400px;
     display: flex;
-    justify-content: center;
-    align-items: center;
+    flex-direction: column;
+    align-items: flex-end;
     background-color: rgb(69, 68, 68);
     border: 2px solid black;
     border-radius: 8px;
@@ -33,7 +33,12 @@
 #display {
     font-size: 56px;
     color: white;
-    
+    margin-right: 10px;
+}
+
+#running-display {
+    color: white;
+    margin-right: 10px;
 }
 
 #delete-container {
