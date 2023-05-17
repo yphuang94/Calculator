@@ -14,7 +14,7 @@
             <div id="top-container">
                 <div id="display-container">
                     <div id="running-display"></div>
-                    <div id="display"></div>
+                    <div id="display">0</div>
                 </div>
                 <div id="delete-container">
                     <button class="input delete" onclick="backspace()">DEL</button>
@@ -158,7 +158,7 @@
         function clearAll() { //clear() is native JS function
             clearInputs()
             results = "";
-            displayText = "";
+            displayText = 0;
             runningDisplay = "";
             
             changeDisplay();
